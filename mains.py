@@ -11,10 +11,11 @@ def webhook():
     data = request.json
     print(f"Webhook recebido: {data}")
     
-    Aqui você processa os eventos do Trello
-    Por enquanto só loga
-    
     return jsonify({"status": "ok"}), 200
+
+@app.route('/', methods=['GET'])
+def home():
+    return "Webhook Trello OK", 200
 
 if name == 'main':
     port = int(os.environ.get('PORT', 5000))
